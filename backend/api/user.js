@@ -50,7 +50,7 @@ module.exports = app =>{
     }
 
     const get = (req, res) =>{
-        app.db = ('users')
+        app.db('users')
             .select('id','name','email','cpf','admin')
             .then(users => res.json(users))
             .catch(err => res.status(500).send(err))
